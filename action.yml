@@ -1,0 +1,27 @@
+name: 'mrpack-publish'
+description: 'Publish .mrpacks to Modrinth'
+author: 'ryanccn'
+
+branding:
+  color: blue
+  icon: upload-cloud
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+
+inputs:
+  name:
+    required: true
+  version-number:
+    required: true
+  project-id:
+    required: true
+  pack-filename:
+    required: true
+  game-versions:
+    required: true
+  loaders:
+    required: true
+  modrinth-token:
+    required: true
