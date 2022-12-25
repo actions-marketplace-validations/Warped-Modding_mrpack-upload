@@ -6,5 +6,5 @@ Publish .mrpacks to Modrinth.
 
 ```yaml
 - name: Publish .mrpack
-  uses: RyanModDev/mrpack-publish@v0
+  uses: Warped-Modding/mrpack-publish-warped@v0
 ```
