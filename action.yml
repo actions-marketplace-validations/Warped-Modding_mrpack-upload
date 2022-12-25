@@ -1,4 +1,4 @@
-name: 'mrpack-publish-warped'
+name: 'mrpack-upload'
 description: 'Publish .mrpacks to Modrinth'
 author: 'ZekeZ'
 
