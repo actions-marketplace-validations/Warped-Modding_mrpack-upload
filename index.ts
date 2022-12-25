@@ -1,5 +1,5 @@
 import { fetch } from 'ofetch';
-import { readFileSync } from 'fs';
+import { readFile } from 'fs';
 import { join } from 'path';
 
 import { getInput, error } from '@actions/core';
@@ -20,7 +20,13 @@ const success = (a: string) => {
     MODRINTH_TOKEN: getInput('modrinth-token', { required: true }),
   };
 
-  const file = readFileSync(join(process.cwd(), inputs.PACK_FILENAME));
+  var file
+
+  readFile(inputs.PACK_FILENAME, (err, data) => {
+    if (err) throw err;
+    file = data;
+    console.log(data);
+  })
 
   const form = new URLSearchParams();
 
@@ -36,7 +42,7 @@ const success = (a: string) => {
     dependencies: [],
   };
   form.append('data', JSON.stringify(data));
-  form.append(inputs.PACK_FILENAME, file.toString());
+  form.append(inputs.PACK_FILENAME, file);
 
   const res = await fetch('https://api.modrinth.com/v2/version', {
     method: 'POST',
