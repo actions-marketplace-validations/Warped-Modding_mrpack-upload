@@ -22,7 +22,7 @@ const success = (a: string) => {
 
   const file = readFileSync(join(process.cwd(), inputs.PACK_FILENAME));
 
-  const form = new FormData();
+  const form = new URLSearchParams();
 
   const data = {
     name: inputs.NAME,
