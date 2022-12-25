@@ -20,6 +20,9 @@ const success = (a: string) => {
     MODRINTH_TOKEN: getInput('modrinth-token', { required: true }),
   };
 
+  const f = await readFile(join(process.cwd(), inputs.PACK_FILENAME));
+  const file = new File([f], inputs.PACK_FILENAME);
+
   const form = new FormData();
 
   const data = {
