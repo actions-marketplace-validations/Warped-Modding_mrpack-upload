@@ -4,6 +4,7 @@ import { join } from 'path';
 
 import { getInput, error } from '@actions/core';
 import { bold, green } from 'kleur/colors';
+import { fstat, writeFile } from 'fs';
 
 const success = (a: string) => {
   console.log(bold(green('✔')) + ' ' + a);
@@ -20,8 +21,7 @@ const success = (a: string) => {
     MODRINTH_TOKEN: getInput('modrinth-token', { required: true }),
   };
 
-  const f = await readFile(join(process.cwd(), inputs.PACK_FILENAME));
-  const file = new File([f], inputs.PACK_FILENAME);
+  const file = await readFile(join(process.cwd(), inputs.PACK_FILENAME));
 
   const form = new FormData();
 
