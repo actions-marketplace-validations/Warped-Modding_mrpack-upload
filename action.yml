@@ -1,9 +1,9 @@
-name: 'mrpack-publish'
+name: 'mrpack-publish-warped'
 description: 'Publish .mrpacks to Modrinth'
-author: 'ryanccn'
+author: 'ZekeZ'
 
 branding:
-  color: blue
+  color: purple
   icon: upload-cloud
 
 runs:
