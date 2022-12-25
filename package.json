@@ -20,6 +20,6 @@
     "esbuild": "^0.15.7",
     "execa": "^6.1.0",
     "ofetch": "^1.0.0",
-    "typescript": "^4.8.2"
+    "typescript": "^4.9.4"
   }
 }
