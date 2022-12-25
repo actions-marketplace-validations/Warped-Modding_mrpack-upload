@@ -38,7 +38,7 @@ const success = (a: string) => {
     dependencies: [],
   };
   form.append('data', JSON.stringify(data));
-  form.append(inputs.PACK_FILENAME, JSON.stringify(file));
+  form.append(inputs.PACK_FILENAME, file);
 
   const res = await fetch('https://api.modrinth.com/v2/version', {
     method: 'POST',
